@@ -1,6 +1,52 @@
 Changelog
 =========
 
+-----
+Added
+~~~~~
+
+* Ability to disable the recursively evaluation of jinja and yaql expressions, by setting the environment variable ``ENABLE_RECURSIVELY_EVALUATION`` to ``false``.
+  Contributed by @moradf90
+
+
+Unreleased
+----------
+
+Changed
+~~~~~~~
+* Dropped python3.6 support.
+  Contributed by @nzlosh
+* Use pip 24.0 in virtualenv
+  Contributed by @nzlosh
+* Aligned pinned dependencies with St2 core.
+  Contributed by @nzlosh
+
+Fixed
+~~~~~
+
+
+1.6.0
+-----
+
+Changed
+~~~~~~~
+
+* Update deprecated `collections` imports to `collections.abc` to be forward-compatible with Python3.10
+  Contributed by @AndroxxTraxxon
+* Migrate from `nosetest` to `pytest` for Python test runner.
+  Contributed by @AndroxxTraxxon
+* Add Python versions 3.9, 3.10, and 3.11 to the test matrix
+  Contributed by @AndroxxTraxxon
+
+Fixed
+~~~~~
+
+* Update networkx >=2.6 for Python 3.8 to fix insecure deserialization #255 (security fix)
+  Contributed by @Stealthii
+* Update jsonschema requirements to allow 3.2 (security fix)
+  Contributed by @james-bellamy
+
+
 1.5.0
 -----
 
@@ -138,7 +184,7 @@ Added
 ~~~~~
 
 * Add flake8 extension to restrict import alias. (improvement)
-* Add developer docs on getting started, testing, and StackStorm integration. (improvement) 
+* Add developer docs on getting started, testing, and StackStorm integration. (improvement)
 
 Changed
 ~~~~~~~
@@ -168,7 +214,7 @@ Added
 Fixed
 ~~~~~
 
-* Add sleep in while loop for composing execution graph to spread out cpu spike. (improvement) 
+* Add sleep in while loop for composing execution graph to spread out cpu spike. (improvement)
 * Value in quotes in shorthand publish should be evaluated as string type. Fixes #130 (bug fix)
 * Fix interpretation of boolean value in shorthand format of publish. Fixes #119 (bug fix)
 * Update YAQL section in docs on use of "=>" for named parameters in function calls. Closes #124
